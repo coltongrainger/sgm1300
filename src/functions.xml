@@ -27,19 +27,4 @@
         <exercise>
           <webwork source="Library/UCSB/Stewart5_1_5/Stewart5_1_5_15.pg" />
         </exercise>
-        <exercise>
-          <webwork source="Library/LoyolaChicago/Precalc/Chap3Sec2/Q24.pg" />
-        </exercise>
-        <exercise>
-          <webwork source="Library/LoyolaChicago/Precalc/Chap3Sec2/Q18.pg" />
-        </exercise>
-        <exercise>
-          <webwork source="Library/Union/setFunctionExponential/srw4_1_11.pg" />
-        </exercise>
-        <exercise>
-          <webwork source="Library/LoyolaChicago/Precalc/Chap9Sec7/Q03.pg" />
-        </exercise>
-        <exercise>
-          <webwork source="Library/LoyolaChicago/Precalc/Chap3Sec2/Q22.pg" />
-        </exercise>
 </section>

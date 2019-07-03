@@ -88,12 +88,12 @@ SERVER = "http://127.0.0.1"
 
 sgm1300-extraction:
 	install -d $(WWOUT)
-	-rm $(WWOUT)/webwork-extraction.xml
+	-rm $(WWOUT)/webwork-extraction.xml 
 	PYTHONWARNINGS=module $(PTX)/script/mbx -c webwork -d $(WWOUT) -s $(SERVER) $(MAINFILE)
 
 sgm1300-merge:
 	cd $(WWOUT); \
-	xsltproc -xinclude  --stringparam webwork.extraction $(WWOUT)/webwork-extraction.xml $(PTXXSL)/pretext-merge.xsl $(MAINFILE) > sgm1300-merge.ptx
+	xsltproc -xinclude --stringparam webwork.extraction $(WWOUT)/webwork-extraction.xml $(PTXXSL)/pretext-merge.xsl $(MAINFILE) > sgm1300-merge.ptx
 
 # Generate HTML output
 # Output is:  $(HTMLOUT)/${MAINFILE%*.}.html
@@ -106,7 +106,17 @@ html: sgm1300-merge
 	install -d $(HTMLOUT)/knowl
 	cp -a $(IMAGESSRC) $(HTMLOUT)
 	cd $(HTMLOUT); \
-	xsltproc -xinclude -stringparam numbering.theorems.level 1 -stringparam numbering.projects.level 1 -stringparam numbering.equations.level 1 -stringparam html.knowl.exercise.inline no $(PTXXSL)/mathbook-html.xsl $(WWOUT)/sgm1300-merge.ptx
+	xsltproc -xinclude \
+	-stringparam debug.chapter.start 0 \
+	-stringparam chunk.level 3 \
+	-stringparam html.navigation.logic linear \
+	-stringparam numbering.theorems.level 2 \
+	-stringparam numbering.projects.level 2 \
+	-stringparam numbering.equations.level 2 \
+	-stringparam html.knowl.example yes \
+	-stringparam html.knowl.exercise.inline no \
+	-stringparam html.css.colorfile colors_pastel_blue_orange.css \
+	$(PTXXSL)/mathbook-html.xsl $(WWOUT)/sgm1300-merge.ptx
 
 # make all the image files in svg format
 images: sgm1300-merge

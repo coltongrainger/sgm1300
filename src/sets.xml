@@ -15,6 +15,7 @@
     </figure>
     <p><q>The creation of <term>set theory</term> is generally credited to the German mathematician Georg Cantor, in the late nineteenth century. Previously, sets had seldom been regarded as entities worthy of study in their own right; but Cantor, originally motivated by a problem in Fourier analysis, developed an extensive theory. Among many other things, he showed that there are different sizes of infinity, proving, for instance, that there is no bijection between <m>\mathbb{R}</m> and <m>\mathbb{N}</m>.</q> [Leinster, 2016. Basic Category Theory.]</p>
   </introduction>
+
   <subsection xml:id="sets-of-numbers">
     <title>Sets of Numbers</title>
     <p>Before introducing functions, we'll need a brief summary of
@@ -145,6 +146,7 @@ For the most part, we will focus on sets whose elements come from the real numbe
       <m>\mathbb{R}</m>.
     </p>
   </subsection>
+
   <subsection xml:id="interval-notation">
     <title>Interval Notation</title>
     <p><q>Interval notation</q> is a shorthand way of describing an interval.  For example, for real numbers <m>a</m> and <m>b</m>, <q>(a,b)</q> is interval notation for <q> the set of all real numbers <m>x</m> bigger than <m>a</m> and less than <m>b</m></q>.  The table given below displays interval notation for different kinds of intervals.
@@ -624,6 +626,5 @@ Said differently, the intersection of two sets is the overlap of the two sets-al
             </ul>
           </p>
         </assemblage>
-
       </subsection>
     </section>
